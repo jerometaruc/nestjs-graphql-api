@@ -2,6 +2,6 @@ import { Module } from '@nestjs/common';
 import { CatsResolver } from './cats.resolver';
 
 @Module({
-  providers: [CatsResolver],
+    providers: [CatsResolver],
 })
-export class CatsModule {}
+export class CatsModule { }

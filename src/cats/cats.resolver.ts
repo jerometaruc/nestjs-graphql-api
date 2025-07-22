@@ -2,13 +2,13 @@ import { Query, Resolver } from "@nestjs/graphql";
 
 @Resolver()
 export class CatsResolver {
-//   constructor(
-//     private authorsService: AuthorsService,
-//     private postsService: PostsService,
-//   ) {}
+    //   constructor(
+    //     private authorsService: AuthorsService,
+    //     private postsService: PostsService,
+    //   ) {}
 
-  @Query(() => String)
-  async hello() {
-    return 'hello';
-  }
+    @Query(() => String)
+    async hello() {
+        return 'hello';
+    }
 }
