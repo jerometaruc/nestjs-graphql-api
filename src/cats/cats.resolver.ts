@@ -6,26 +6,26 @@ import { CreateCatInput } from "./dto/create-cat.input";
 @Resolver()
 export class CatsResolver {
     constructor(
-        private catsSerivce: CatsService,
+        private catsService: CatsService,
     ) {}
 
     @Query(() => [Cat])
     async cats() {
-        return this.catsSerivce.findAll();
+        return this.catsService.findAll();
     }
 
     @Query(() => Cat, { nullable: true })
     async getCat(@Args('id') id: string) {
-        return this.catsSerivce.findById(id);
+        return this.catsService.findById(id);
     }
 
     @Mutation(() => Cat)
     async deleteCat(@Args('id') id: string) {
-        return this.catsSerivce.delete(id);
+        return this.catsService.delete(id);
     }
 
     @Mutation(() => Cat)
     async createCat(@Args('createCatInput') createCatInput: CreateCatInput) {
-        return this.catsSerivce.create(createCatInput);
+        return this.catsService.create(createCatInput);
     }
 }
