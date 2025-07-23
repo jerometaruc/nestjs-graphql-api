@@ -18,9 +18,16 @@ input CreateCatInput {
 type Mutation {
   createCat(createCatInput: CreateCatInput!): Cat!
   deleteCat(id: String!): Cat!
+  updateCat(id: String!, updateCatInput: UpdateCatInput!): Cat
 }
 
 type Query {
   getAllCats: [Cat!]!
   getCat(id: String!): Cat
+}
+
+input UpdateCatInput {
+  age: Int
+  breed: String
+  name: String
 }
