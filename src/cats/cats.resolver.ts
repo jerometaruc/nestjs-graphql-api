@@ -10,7 +10,7 @@ export class CatsResolver {
     ) {}
 
     @Query(() => [Cat])
-    async cats() {
+    async getAllCats() {
         return this.catsService.findAll();
     }
 

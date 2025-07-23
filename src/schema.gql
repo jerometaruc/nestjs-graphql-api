@@ -21,6 +21,6 @@ type Mutation {
 }
 
 type Query {
-  cats: [Cat!]!
+  getAllCats: [Cat!]!
   getCat(id: String!): Cat
 }
