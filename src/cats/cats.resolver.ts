@@ -9,14 +9,19 @@ export class CatsResolver {
         private catsSerivce: CatsService,
     ) {}
 
-    @Query(() => String)
-    async hello() {
-        return 'hello';
-    }
-
     @Query(() => [Cat])
     async cats() {
         return this.catsSerivce.findAll();
+    }
+
+    @Query(() => Cat, { nullable: true })
+    async getCat(@Args('id') id: string) {
+        return this.catsSerivce.findById(id);
+    }
+
+    @Mutation(() => Cat)
+    async deleteCat(@Args('id') id: string) {
+        return this.catsSerivce.delete(id);
     }
 
     @Mutation(() => Cat)

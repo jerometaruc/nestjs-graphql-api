@@ -13,6 +13,14 @@ export class CatsService {
         return createdCat.save();
     }
 
+    async delete(id: string): Promise<Cat | null> {
+        return this.catModel.findByIdAndDelete(id).exec();
+    }
+
+    async findById(id: string): Promise<Cat | null> {
+        return this.catModel.findById(id).exec();
+    }
+
     async findAll(): Promise<Cat[]> {
         return this.catModel.find().exec();
     }
